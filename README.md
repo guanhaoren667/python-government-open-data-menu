@@ -1,2 +1,85 @@
-# python-government-open-data-menu
-A Python menu program integrating 10 government open data APIs.
+# Python 政府開放資料 API 查詢系統
+ 
+## 專案說明
+ 
+本專案使用 Python 串接政府開放資料 API，並將 10 項資料查詢功能整合至同一個文字介面選單。
+ 
+使用者可輸入 1 至 10，選擇要查詢的政府開放資料；輸入 0 可結束程式。程式執行期間若累積輸入錯誤 3 次，系統將自動結束。
+ 
+## 主要功能
+ 
+1. 新竹市公共危險物品場所資料
+2. 新竹市第 22 屆里長名冊
+3. 114 學年度新竹市立國中小通訊資料
+4. 115 年竹風藝文饗宴節目表
+5. 新竹市預防接種合約院所名冊
+6. 新北市機車定檢站名單
+7. 新竹市各級工會團體組織名冊
+8. 新竹市警察局測速照相固定桿設置地點
+9. 新竹市代收稅款金融機構服務據點
+10. 新竹市立案表演團體名冊
+ 
+## 使用技術
+ 
+- Python
+- requests
+- urllib3
+- JSON 資料讀取與欄位整理
+- Python 模組匯入
+- 函式
+- while 迴圈
+- if / elif / else 條件判斷
+- 使用者輸入與累積錯誤次數處理
+ 
+## 專案結構
+ 
+```text
+main.py
+api01.py
+api02.py
+api03.py
+api04.py
+api05.py
+api06.py
+api07.py
+api08.py
+api09.py
+api10.py
+requirements.txt
+README.md
+```
+ 
+`main.py` 為程式進入點，負責顯示主選單、接收使用者輸入，並呼叫對應的 API 模組。
+ 
+`api01.py` 至 `api10.py` 分別負責讀取與顯示不同的政府開放資料。
+ 
+## 安裝套件
+ 
+```powershell
+pip install -r requirements.txt
+```
+ 
+## 執行方式
+ 
+```powershell
+python main.py
+```
+ 
+執行後輸入 1 至 10，可查詢對應的政府開放資料；輸入 0 則結束程式。
+ 
+## HTTPS 憑證說明
+ 
+部分政府開放資料來源在目前的 Python 執行環境中，會發生 SSL 憑證驗證失敗。
+ 
+為確認 API 網址、JSON 資料處理與主選單流程能正常運作，目前的本機展示版本暫時使用 `verify=False`，並隱藏對應的 `InsecureRequestWarning`。
+ 
+此設定僅供作品測試與功能展示使用。`verify=False` 會關閉 HTTPS 伺服器憑證驗證，不適合作為正式服務的安全設定。
+ 
+## 測試結果
+ 
+以下功能均已完成測試：
+ 
+- 10 項 API 查詢功能均可正常顯示資料
+- 查詢完成後可返回主選單
+- 輸入 0 可正常結束程式
+- 程式執行期間累積輸入錯誤 3 次後，系統會自動結束
