@@ -83,3 +83,10 @@ python main.py
 - 查詢完成後可返回主選單
 - 輸入 0 可正常結束程式
 - 程式執行期間累積輸入錯誤 3 次後，系統會自動結束
+
+## 第二階段作品集網站
+
+本專案後續延伸為 HTML 作品集網站，
+將 10 項 API 資料轉換為獨立網頁並透過 GitHub Pages 公開發布。
+
+[查看 Python 政府開放資料 API 作品集網站](https://github.com/guanhaoren667/python-open-data-portfolio)
